@@ -36,6 +36,7 @@ contract Strips is Ownable, Pausable {
     event SetPrice(address indexed keeper, address indexed token, )
 
     // ==========Constructor========================================
+    constructor() {}
 
     // ==========Functions==========================================
     function setPrice(address _token, uint256 _timestamp, uint256 _price) external whenNotPaused {
