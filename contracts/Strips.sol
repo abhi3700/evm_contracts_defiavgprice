@@ -33,7 +33,7 @@ contract Strips is Ownable, Pausable {
 
 
     // ==========Events=============================================
-    event SetPrice(address indexed keeper, address indexed token, )
+    event SetPrice(address indexed keeper, address indexed token, uint256 timestamp, uint256 price);
 
     // ==========Constructor========================================
     constructor() {}
@@ -56,7 +56,7 @@ contract Strips is Ownable, Pausable {
         // increment the index of price/timestamp
         availableIndex = availableIndex.add(1);
 
-
+        SetPrice(msg.sender, _token, _timestamp, _price);
     }
 
     /// @notice Get Average Price of a token with address for a time range
