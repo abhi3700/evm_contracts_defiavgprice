@@ -23,18 +23,22 @@ contract Strips is Ownable, Pausable {
     }
 
     // mapping of token address & mapping of timestamp & Price struct
-    mapping( address => mapping(uint256 => Price) ) mapTstampPrice;
+    mapping( address => mapping(uint256 => Price) ) public mapTstampPrice;
 
-    uint256 totalPrice;
-    uint256 availableIndex;
+    // total price till date
+    uint256 public totalPrice;
+
+    // next available index
+    uint256 public availableIndex;
 
 
     // ==========Events=============================================
+    event SetPrice(address indexed keeper, address indexed token, )
 
     // ==========Constructor========================================
 
     // ==========Functions==========================================
-    function setPrice(address _token, uint256 _timestamp, uint256 _price) external {
+    function setPrice(address _token, uint256 _timestamp, uint256 _price) external whenNotPaused {
         require( _token != address(0), "token address must not be zero" );
         require( _timestamp > 0, "timestamp must be positive" );
         require( _price > 0, "price must be positive" );
