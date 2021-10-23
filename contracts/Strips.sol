@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/security/Pausable.sol';
 import '@openzeppelin/contracts/utils/math/SafeMath.sol';
+import '@openzeppelin/contracts/utils/Context.sol';
 import "hardhat/console.sol";
 
 /// @notice A keeper pushes a price of token
@@ -56,7 +57,7 @@ contract Strips is Ownable, Pausable {
         // increment the index of price/timestamp
         availableIndex = availableIndex.add(1);
 
-        SetPrice(msg.sender, _token, _timestamp, _price);
+        SetPrice(_msgSender(), _token, _timestamp, _price);
     }
 
     /// @notice Get Average Price of a token with address for a time range
