@@ -1,5 +1,5 @@
-# Strip Finance
-Strip Finance
+# DeFi Token average price
+Calculate on-chain average price of tokens on DeFi protocol.
 
 ## About
 * A keeper pushes a price of token.
