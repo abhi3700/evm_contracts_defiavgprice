@@ -1,4 +1,4 @@
-# DeFi Token average price
+# DeFi Utils - Token average price
 Calculate on-chain average price of tokens on DeFi protocol.
 
 ## About
