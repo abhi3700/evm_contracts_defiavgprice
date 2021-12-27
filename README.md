@@ -2,8 +2,8 @@
 Calculate on-chain average price of tokens on DeFi protocol.
 
 ## About
-* A keeper pushes a price of token.
-* Task: Find out the avg price of a token for a given time interval range, without iterating in `for-loop`.
+* A keeper pushes a price of token(s).
+* Task: Find out the avg price of a token for a given time interval range, without iterating in `loop` (for, while).
 
 ## Installation
 ```console
