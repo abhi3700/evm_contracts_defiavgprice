@@ -8,8 +8,8 @@ import '@openzeppelin/contracts/utils/Context.sol';
 import "hardhat/console.sol";
 
 /// @notice A keeper pushes a price of token
-/// @dev Find out the avg price of token for a time interval without iterating in for-loop
-contract Strips is Ownable, Pausable {
+/// @dev Find out the avg price of token for a time interval without iterating in loops (for, while)
+contract tokenavgprice is Ownable, Pausable {
 
     using SafeMath for uint256;
 
