@@ -40,6 +40,10 @@ contract Strips is Ownable, Pausable {
     constructor() {}
 
     // ==========Functions==========================================
+    /// @notice Set price for a token
+    /// @param _token token address
+    /// @param _timestamp time at which token price is to be set
+    /// @param _price token price 
     function setPrice(address _token, uint256 _timestamp, uint256 _price) external whenNotPaused {
         require( _token != address(0), "token address must not be zero" );
         require( _timestamp > 0, "timestamp must be positive" );
@@ -60,7 +64,11 @@ contract Strips is Ownable, Pausable {
         SetPrice(_msgSender(), _token, _timestamp, _price);
     }
 
+    // -------------------------------------------------------------
     /// @notice Get Average Price of a token with address for a time range
+    /// @param _token token address
+    /// @param _startTimestampRange start timestamp of the range
+    /// @param _finishTimestampRange finish timestamp of the range
     function getAvgPrice(address _token, uint256 _startTimestampRange, uint256 _finishTimestampRange) external view returns (uint256) {
         require( _token != address(0), "token address must not be zero" );
         require (mapTstampPrice[_token][_startTimestampRange].exist, "Invalid start timestamp range");
