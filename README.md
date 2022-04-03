@@ -1,5 +1,6 @@
 # DeFi Utils - Token average price
-Calculate on-chain average price of tokens on DeFi protocol.
+
+Computationally efficient contract for calculating on-chain average token price for DeFi protocols
 
 ## About
 * A keeper pushes a price of token(s).

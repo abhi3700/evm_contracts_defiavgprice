@@ -10,23 +10,19 @@ async function main(): Promise<void> {
   // If this runs in a standalone fashion you may want to call compile manually
   // to make sure everything is compiled
   // await run("compile");
-  // We get the token contract to deploy
-  const TokenFactory: ContractFactory = await ethers.getContractFactory(
-    'Coin',
-  );
-  const token: Contract = await TokenFactory.deploy("AUDC Token", "AUDC");
-  await token.deployed();
-  console.log('Token deployed to: ', token.address);
-
   // We get the vault contract to deploy
-  const VaultFactory: ContractFactory = await ethers.getContractFactory(
-    'VaultC',
+  // TAP: Token Average Price
+  const TAPFactory: ContractFactory = await ethers.getContractFactory(
+    'tokenavgprice',
   );
-  const vault: Contract = await VaultFactory.deploy(token.address, 3000);
-  await vault.deployed();
-  console.log('Vault deployed to: ', vault.address);
+  const tapC: Contract = await TAPFactory.deploy();
+  await tapC.deployed();
+  console.log('TAP deployed to: ', tapC.address);
+  console.log(
+    `The transaction that was sent to the network to deploy the TokenAvgPrice contract: ${tapC.deployTransaction.hash
+    }`
+  );
 
-  // add the vault address into token contract
 
 }
 

@@ -9,20 +9,20 @@ async function main(): Promise<void> {
   // Hardhat always runs the compile task when running scripts through it.
   // If this runs in a standalone fashion you may want to call compile manually
   // to make sure everything is compiled
-  await run("compile");
-  // We get the token contract to deploy
-  const StripsFactory: ContractFactory = await ethers.getContractFactory(
-    'Strips',
+  // await run("compile");
+  // We get the vault contract to deploy
+  // TAP: Token Average Price
+  const TAPFactory: ContractFactory = await ethers.getContractFactory(
+    'tokenavgprice',
   );
-  const strips: Contract = await StripsFactory.deploy();
-  await strips.deployed();
-  console.log('Token deployed to: ', strips.address);
-
+  const tapC: Contract = await TAPFactory.deploy();
+  await tapC.deployed();
+  console.log('TAP deployed to: ', tapC.address);
   console.log(
-      `The transaction that was sent to the network to deploy the Strip contract: ${
-          strips.deployTransaction.hash
-      }`
+    `The transaction that was sent to the network to deploy the TokenAvgPrice contract: ${tapC.deployTransaction.hash
+    }`
   );
+
 
 }
 
