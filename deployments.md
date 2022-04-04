@@ -2,7 +2,7 @@
 
 ## Rinkeby Testnet
 
-* Etherscan: <https://rinkeby.etherscan.io/address/0x61355503969842fB7931617123e7FC9a0b916c97>
+* Etherscan: <https://rinkeby.etherscan.io/address/0xE92C70F2E2e556159827A25EA00C63493Ea5Ebe0>
 * Execution
 
 ```console
